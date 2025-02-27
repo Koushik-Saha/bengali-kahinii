@@ -9,7 +9,7 @@ export const API_BASE_URL = process.env.NEXT_PUBLIC_BASE_API_PATH || "http://127
 
 export default function MainBlog() {
 
-    const [dataPost, setDataPost] = useState([]);
+    const [dataPost, setDataPost] = useState<any>([]);
 
     console.log("Base API URL:", API_BASE_URL);
 
@@ -33,38 +33,14 @@ export default function MainBlog() {
 
     console.log("dataPost", dataPost)
 
-    let posts = [
-        {
-            "title": "অনন্যার ঋণ শোধ — পর্ব ২",
-            "author": "defoe",
-            "date": "26-02-2025",
-            "views": 3,
-            "excerpt": "স্বামী টাকা ধার নিয়েছিল এক চায়ের মহাজনের থেকে। কিন্তু সুদে আসলে তা শোধ দিতে হচ্ছে তার নিরীহ, রূপসী স্ত্রীকে।",
-            "category": "গৃহবধূর চন্দন কাহিনী",
-            "comments": 0,
-            slug: "",
-            summary: "",
-            tags: "",
-        },
-        {
-            "title": "আমার বৌয়ের প্রথম ম্যাসাজ ২ - সফট কাকউড",
-            "author": "subho__9798",
-            "date": "26-02-2025",
-            "views": 100,
-            "excerpt": "বৌয়ের রগরগে ম্যাসাজের গল্পঃ কিন্তু একজন মধ্য বয়স্ক বাবার বয়সী লোক আমার কচি বউকে ইলেক মতন উপভোগ করলো।",
-            "category": "স্বামী স্ত্রী বাংলা চটি গল্প",
-            "comments": 0,
-            slug: "",
-            summary: "",
-            tags: "",
-        }
-    ]
-
     return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
           <div className="flex justify-start text-base leading-6 font-medium">
-              <PostList />
+              {
+                  dataPost && dataPost?.data?.length > 0 &&
+                  <PostList posts={dataPost?.data || []} />
+              }
           </div>
       </div>
     </>

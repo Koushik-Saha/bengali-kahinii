@@ -6,4 +6,6 @@ export interface Post {
     excerpt: string;
     category: string;
     comments: number;
+    subtitle: string;
+    tags: []
 }
