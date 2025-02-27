@@ -13,8 +13,8 @@ const PostList: React.FC<PostListProps> = ({ posts }) => {
     return (
         <div className="max-w-6xl p-4 space-y-6">
             {posts.map((post: Post, index: number) => (
-                <div key={index} className="bg-green-100 p-6 rounded-lg shadow-md border-l-4 border-green-500">
-                    <h2 className="text-xl font-bold text-green-700">{post.title}</h2>
+                <div className="bg-gray-100 p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                    <h2 className="text-xl font-bold text-blue-700">{post.title}</h2>
                     <p className="text-gray-600 text-sm mt-2">
                         by <span className="font-semibold">{post.author}</span> • {post.date} • 👁 {post.views}
                     </p>
